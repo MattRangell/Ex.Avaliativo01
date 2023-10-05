@@ -1,16 +1,15 @@
-# Import the required libraries
 from pymongo import MongoClient
 
-# Connect to the MongoDB server
+
 client = MongoClient('mongodb+srv://root:root@cluster0.kd794t7.mongodb.net/')
 
-# Switch to your desired database
+
 db = client['ExAvaliativo01']
 
-# Create a collection named "Motoristas"
+
 motoristas_collection = db['Motoristas']
 
-# Define the document to be inserted
+
 document = {
     'Corridas': [
         {
@@ -31,12 +30,11 @@ document = {
                 'name': 'Jane Smith'
             }
         },
-        # Add more instances of "Corridas" if needed
+        
     ]
 }
 
-# Insert the document into the collection
 motoristas_collection.insert_one(document)
 
-# Close the connection
+
 client.close()
